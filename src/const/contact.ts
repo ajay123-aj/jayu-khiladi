@@ -1,10 +1,10 @@
 // Shop / contact details and navigation used across the site.
 export const site = {
-  name: "Jayu Khiladi Safa Shop",
-  tagline: "Safa & Event Styling for Every Celebration",
-  phone: "917623038598",
-  phoneDisplay: "+91 76230 38598",
-  email: "hello@ajtechhub.com",
+  name: "Jayu Khiladi",
+  tagline: "Safa & Event",
+  phone: "919624401559",
+  phoneDisplay: "+91 96244 01559",
+  email: "jayukhiladi@gmail.com",
 };
 
 export const navLinks = [
@@ -24,22 +24,22 @@ export const whatsappMessages = {
   // Generic "I have a question" chat. Tokens: {shop}
   query: "Hello {shop}, I have a query.",
 
-  // Single-product order (product detail page). Tokens: {shop} {name} {price}
-  order: "Hello {shop}, I want to order {name} for ₹{price}.",
+  // Single-product order (product detail page). Tokens: {shop} {name}
+  order: "Hello {shop}, I want to order {name}.",
 
   // Multi-product cart checkout, assembled from the pieces below.
   cart: {
     // Common greeting shown once at the top. Tokens: {shop}
     greeting: "Hello {shop}, I'd like to order the following:",
     // One header line per product.
-    // Tokens: {index} {name} {price} {qty} {lineTotal}
-    item: "{index}. {name} — ₹{price} × {qty} = ₹{lineTotal}",
+    // Tokens: {index} {name} {qty}
+    item: "{index}. {name} × {qty}",
     // Detail bullet under each product. Tokens: {detail}
     detail: "   • {detail}",
     // Text placed between product blocks.
     itemSeparator: "\n\n",
-    // Grand total line. Tokens: {total} {count}
-    total: "Total ({count} items): ₹{total}",
+    // Grand total line. Tokens: {count}
+    total: "Total items: {count}",
   },
 };
 
@@ -64,24 +64,23 @@ export function queryMessage() {
 }
 
 /** Single-product order message (product detail pages). */
-export function orderMessage(name: string, price: number) {
-  return fillTemplate(whatsappMessages.order, { shop: site.name, name, price });
+export function orderMessage(name: string) {
+  return fillTemplate(whatsappMessages.order, { shop: site.name, name });
 }
 
 /** Minimal shape needed to build a cart checkout message. */
 export type CartLine = {
   name: string;
-  price: number;
   quantity: number;
   details?: string[];
 };
 
 /**
  * Cart checkout message: a common greeting, then one detailed block per product
- * (name, its detail bullets, and qty × price = line total), then the grand
- * total across all products.
+ * (name, its detail bullets, and quantity), then the total item count across
+ * all products.
  */
-export function cartMessage(items: CartLine[], total: number) {
+export function cartMessage(items: CartLine[]) {
   const cfg = whatsappMessages.cart;
   const count = items.reduce((sum, line) => sum + line.quantity, 0);
 
@@ -89,9 +88,7 @@ export function cartMessage(items: CartLine[], total: number) {
     const header = fillTemplate(cfg.item, {
       index: index + 1,
       name: line.name,
-      price: line.price,
       qty: line.quantity,
-      lineTotal: line.price * line.quantity,
     });
     const bullets = (line.details ?? []).map((detail) =>
       fillTemplate(cfg.detail, { detail }),
@@ -102,6 +99,6 @@ export function cartMessage(items: CartLine[], total: number) {
   return [
     fillTemplate(cfg.greeting, { shop: site.name }),
     blocks.join(cfg.itemSeparator),
-    fillTemplate(cfg.total, { total, count }),
+    fillTemplate(cfg.total, { count }),
   ].join("\n\n");
 }

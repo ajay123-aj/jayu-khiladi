@@ -19,159 +19,79 @@ export const categories: { key: CategoryKey; label: string }[] = [
   { key: "decor", label: "Decor" },
 ];
 
-export const products: Product[] = [
-  {
-    id: 1,
-    name: "Royal Groom Safa",
-    category: "safa",
-    price: 3200,
-    badge: "Best Seller",
-    description:
-      "Premium velvet safa set with matching turban and brooch styling.",
-    details: [
-      "Premium velvet fabric with royal finish",
-      "Includes matching turban and decorative brooch",
-      "Perfect for groom entry, wedding & engagement rituals, and photography",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
-    ],
-  },
-  {
-    id: 2,
-    name: "Ceremonial Talwar Rental",
-    category: "talwar",
-    price: 1800,
-    badge: "Rental",
-    description:
-      "Elegant decorative sword for baraat, processions, and event photography.",
-    details: [
-      "Rental option available for weddings, engagements and parties",
-      "Polished finish with premium design",
-      "Delivered safely with setup support",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80",
-    ],
-  },
-  {
-    id: 3,
-    name: "Royal Pagdi Set",
-    category: "accessories",
-    price: 1400,
-    badge: "New",
-    description: "Matching pagdi and accessory kit for a complete groom look.",
-    details: [
-      "Premium fabric with handcrafted styling",
-      "Includes matching pocket square and brooch",
-      "Ideal for receptions, weddings and engagement ceremonies",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80",
-    ],
-  },
-  {
-    id: 4,
-    name: "Wedding Decor Umbrella",
-    category: "decor",
-    price: 2600,
-    badge: "Decor",
-    description:
-      "Grand decorative umbrella for entry and photo setups at any celebration.",
-    details: [
-      "Elegant decorative umbrella for event entryways",
-      "Perfect for photo booths, birthdays and reception decor",
-      "Customisable for matching event colour themes",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80",
-    ],
-  },
-  {
-    id: 5,
-    name: "Golden Safa Brooch",
-    category: "accessories",
-    price: 900,
-    badge: "Accessory",
-    description:
-      "Handcrafted brooch for premium safa styling and groom finishing touches.",
-    details: [
-      "Handcrafted golden finish",
-      "Adds charm to safa and pagdi styling for any event",
-      "Lightweight and comfortable for long event wear",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80",
-    ],
-  },
-  {
-    id: 6,
-    name: "Royal Sword Stand",
-    category: "decor",
-    price: 2200,
-    badge: "Decor",
-    description:
-      "Decorative sword holder to complete the royal event ambience and display.",
-    details: [
-      "Beautifully crafted display stand",
-      "Creates a royal ceremonial look",
-      "Ideal for venue styling and photography",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80",
-    ],
-  },
-  {
-    id: 7,
-    name: "Traditional Safa Bundle",
-    category: "safa",
-    price: 3500,
-    badge: "Limited",
-    description:
-      "Luxury safa bundle with contrast fabric and premium finishing.",
-    details: [
-      "High-end fabric with rich colour contrast",
-      "Includes matching brooch and finish accessories",
-      "Great for premium weddings, engagements and celebrations",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
-    ],
-  },
-  {
-    id: 8,
-    name: "Wedding Talwar Set",
-    category: "talwar",
-    price: 2400,
-    badge: "Featured",
-    description:
-      "Heavy duty talwar for groom entry, event processions, and video shoots.",
-    details: [
-      "Premium metallic finish and strong build",
-      "Suitable for entry processions and photography",
-      "Available for rental and purchase",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
-    ],
-  },
+// Image file numbers available under public/images/product/safa (p15 is missing).
+const safaImageNumbers = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23,
+  24, 25, 26, 27, 28, 29, 30, 31,
 ];
+
+const safaNames = [
+  "Royal Groom Safa",
+  "Velvet Maroon Safa",
+  "Golden Zari Safa",
+  "Rajwadi Wedding Safa",
+  "Classic Cream Safa",
+  "Peacock Green Safa",
+  "Firozi Blue Safa",
+  "Regal Red Safa",
+  "Ivory Silk Safa",
+  "Bandhej Print Safa",
+  "Kesari Saffron Safa",
+  "Pink Blossom Safa",
+  "Emerald Royal Safa",
+  "Wine Premium Safa",
+  "Shahi Groom Safa",
+  "Pearl White Safa",
+  "Sunset Orange Safa",
+  "Purple Majesty Safa",
+  "Silver Shine Safa",
+  "Mustard Gold Safa",
+  "Rani Pink Safa",
+  "Turquoise Charm Safa",
+  "Copper Bronze Safa",
+  "Midnight Blue Safa",
+  "Crimson Wedding Safa",
+  "Beige Elegance Safa",
+  "Lehariya Print Safa",
+  "Antique Gold Safa",
+  "Ruby Red Safa",
+  "Grand Baraat Safa",
+];
+
+const safaBadges = [
+  "Best Seller",
+  "New",
+  "Featured",
+  "Premium",
+  "Limited",
+  "Trending",
+];
+
+const safaDescriptions = [
+  "Premium safa set with rich fabric and matching brooch styling.",
+  "Handcrafted safa with royal finish, perfect for groom entry and photography.",
+  "Elegant wedding safa with contrast detailing and premium comfort.",
+  "Luxury safa styled for weddings, engagements and grand celebrations.",
+  "Traditional safa with vibrant colour and a regal, ceremonial look.",
+];
+
+export const products: Product[] = safaImageNumbers.map((num, index) => {
+  const price = 1200 + (index % 12) * 200;
+  return {
+    id: index + 1,
+    name: safaNames[index] ?? `Premium Safa ${index + 1}`,
+    category: "safa",
+    price,
+    badge: safaBadges[index % safaBadges.length],
+    description: safaDescriptions[index % safaDescriptions.length],
+    details: [
+      "Premium fabric with a rich, royal finish",
+      "Includes matching styling for a complete groom look",
+      "Ideal for weddings, engagements, receptions and photography",
+    ],
+    images: [`/images/product/safa/p${num}.png`],
+  };
+});
 
 export type Offer = Product & { mrp: number };
 

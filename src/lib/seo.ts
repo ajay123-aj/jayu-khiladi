@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://jayukhiladi.com";
 const SITE_NAME = "Jayu Khiladi Safa Shop";
@@ -63,12 +63,13 @@ export const defaultMetadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   metadataBase: new URL(SITE_URL),
+};
+
+export const defaultViewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export function generateProductMetadata(

@@ -116,9 +116,6 @@ export default function ProductDetailPage() {
                 </span>
                 <h2 className="mt-3 text-4xl font-black">{product.name}</h2>
                 <p className="mt-4 text-lg text-muted">{product.description}</p>
-                <p className="mt-5 text-3xl font-black text-brand">
-                  ₹{product.price}
-                </p>
                 <ul className="mt-5 space-y-3">
                   {product.details.map((detail) => (
                     <li
@@ -141,7 +138,7 @@ export default function ProductDetailPage() {
                   Add to Cart
                 </button>
                 <a
-                  href={whatsappLink(orderMessage(product.name, product.price))}
+                  href={whatsappLink(orderMessage(product.name))}
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-full bg-whatsapp px-5 py-3 font-semibold text-white transition hover:bg-whatsapp-dark"

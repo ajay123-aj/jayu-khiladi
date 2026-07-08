@@ -28,9 +28,6 @@ export function ProductCard({
           <h4 className="text-lg font-bold text-ink">
             {product.name}
           </h4>
-          <p className="whitespace-nowrap text-lg font-black text-brand">
-            ₹{product.price}
-          </p>
         </div>
         <p className="mt-2 line-clamp-2 text-sm text-muted">
           {product.description}

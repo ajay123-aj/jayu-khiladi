@@ -9,13 +9,12 @@ export function CartDrawer() {
     closeCart,
     items,
     count,
-    total,
     updateQuantity,
     removeFromCart,
     clearCart,
   } = useCart();
 
-  const checkoutHref = whatsappLink(cartMessage(items, total));
+  const checkoutHref = whatsappLink(cartMessage(items));
 
   return (
     <>
@@ -102,7 +101,6 @@ export function CartDrawer() {
                         ✕
                       </button>
                     </div>
-                    <p className="text-sm text-muted">₹{item.price} each</p>
                     <div className="mt-auto flex items-center justify-between pt-2">
                       <div className="flex items-center gap-2">
                         <button
@@ -125,9 +123,6 @@ export function CartDrawer() {
                           +
                         </button>
                       </div>
-                      <span className="font-bold text-brand">
-                        ₹{item.price * item.quantity}
-                      </span>
                     </div>
                   </div>
                 </li>
@@ -138,19 +133,11 @@ export function CartDrawer() {
 
         {items.length > 0 && (
           <footer className="border-t border-brand/10 bg-white/70 px-5 py-4 backdrop-blur">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold uppercase tracking-wider text-muted">
-                Total
-              </span>
-              <span className="text-2xl font-black text-brand">
-                ₹{total}
-              </span>
-            </div>
             <a
               href={checkoutHref}
               target="_blank"
               rel="noreferrer"
-              className="mt-4 flex w-full items-center justify-center rounded-full bg-whatsapp px-4 py-3 text-sm font-semibold text-white transition hover:bg-whatsapp-dark"
+              className="flex w-full items-center justify-center rounded-full bg-whatsapp px-4 py-3 text-sm font-semibold text-white transition hover:bg-whatsapp-dark"
             >
               Checkout on WhatsApp
             </a>

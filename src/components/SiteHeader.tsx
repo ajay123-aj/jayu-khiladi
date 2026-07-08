@@ -44,9 +44,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/50 glass">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/#top" className="flex items-center gap-3">
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-brand text-lg shadow-lg shadow-brand/30 ring-1 ring-gold/40">
-            👑
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.png"
+            alt={site.name}
+            className="h-11 w-11 rounded-full object-cover shadow-lg shadow-brand/30 ring-1 ring-gold/40"
+          />
           <span className="leading-tight">
             <span className="block text-lg font-bold text-brand">
               {site.name}

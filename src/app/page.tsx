@@ -5,15 +5,13 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   categories,
-  offers,
   products,
   type CategoryKey,
 } from "@/const/products";
 import { site, whatsappLink } from "@/const/contact";
-import { events, stats, whyChooseUs } from "@/const/content";
+import { eventPicks, events, stats, whyChooseUs } from "@/const/content";
 import { useCart } from "@/components/CartProvider";
 import { HeroSlider } from "@/components/HeroSlider";
-import { OfferCard } from "@/components/OfferCard";
 import { ProductCard } from "@/components/ProductCard";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -126,9 +124,39 @@ export default function Home() {
                 View All Products
               </Link>
             </div>
-            <div className="mt-6 grid gap-6 md:grid-cols-3">
-              {offers.map((offer) => (
-                <OfferCard key={offer.id} offer={offer} />
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {eventPicks.map((pick) => (
+                <article
+                  key={pick.name}
+                  className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/70 bg-white/85 shadow-[0_16px_50px_rgba(var(--brand-rgb),0.10)] backdrop-blur transition hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(var(--brand-rgb),0.20)]"
+                >
+                  <div className="relative h-52 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={pick.image}
+                      alt={pick.name}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/45 to-transparent" />
+                    <span className="absolute right-4 top-4 rounded-full bg-brand/90 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                      {pick.tag}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h4 className="text-xl font-bold text-ink">{pick.name}</h4>
+                    <p className="mt-2 line-clamp-2 text-sm text-muted">
+                      {pick.description}
+                    </p>
+                    <Link
+                      href="/products"
+                      className="mt-4 inline-flex w-fit rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark"
+                    >
+                      View Collection
+                    </Link>
+                  </div>
+                </article>
               ))}
             </div>
           </section>
